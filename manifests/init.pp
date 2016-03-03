@@ -82,7 +82,7 @@ class swapfile(
 
   file { '/etc/dphys-swapfile':
     ensure  => $ensure,
-    content => "CONF_SWAPFILE=${file_path}\nCONF_SWAPSIZE=${real_size}\n",
+    content => "#File managed by Puppet, don't edit manually\nCONF_SWAPFILE=${file_path}\nCONF_SWAPSIZE=${real_size}\n",
   }
 
   package { 'dphys-swapfile':
