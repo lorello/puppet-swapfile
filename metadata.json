@@ -1,0 +1,15 @@
+{
+  "name": "lorello-swapfile",
+  "version": "0.1.0",
+  "author": "lorello",
+  "summary": "Install and configure dphys-swapfile package to manage swap space on file instead of a dedicated disk partition",
+  "license": "Apache-2.0",
+  "source": "https://github.com/lorello/puppet-swapfile",
+  "project_page": "https://github.com/lorello/puppet-swapfile",
+  "issues_url": "https://github.com/lorello/puppet-swapfile/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
