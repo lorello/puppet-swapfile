@@ -45,7 +45,6 @@ class swapfile(
 ) {
 
   validate_re($ensure, '(present|absent)', "ensure must be 'present' or 'absent', checked value is '${ensure}'")
-  validate_integer($size)
 
   if ! is_absolute_path($file_path) {
     fail("file_path must a valid absolute path, checked value is '${file_path}'")
@@ -77,7 +76,12 @@ class swapfile(
   if $size == undef {
     $real_size = 2 * $::memorysize_mb
   } else {
-    $real_size = $size
+    if is_integer($size) {
+      $real_size = $size
+    } else {
+      fail("Invalid size: it should be undef or an integer value,\
+      current value is '${size}'")
+    }
   }
 
   file { '/etc/dphys-swapfile':
