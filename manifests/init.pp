@@ -54,7 +54,7 @@ class swapfile(
     'Debian': {
       case $::lsbdistid {
         'Ubuntu': {
-          if $::lsbmajdistrelease < 12 {
+          if $::lsbmajdistrelease < 10 {
             fail('Ubuntu before Precise is not supported (missing package)')
           }
         }
